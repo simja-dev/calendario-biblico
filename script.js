@@ -2,6 +2,20 @@
 // TU BASE DE DATOS MANUAL
 // =========================================================================
 const PROGRAMACION_DIARIA = {
+    "2026-06-01": { diaHebreo: "15 del 3°M", esRoshJodesh: false, notas: "" },
+    "2026-06-02": { diaHebreo: "16 del 3°M", esRoshJodesh: false, notas: "" },
+    "2026-06-03": { diaHebreo: "17 del 3°M", esRoshJodesh: false, notas: "" },
+    "2026-06-04": { diaHebreo: "18 del 3°M", esRoshJodesh: true, notas: "" },
+    "2026-06-05": { diaHebreo: "19 del 3°M", esRoshJodesh: false, notas: "" },
+    "2026-06-06": { diaHebreo: "20 del 3°M", esRoshJodesh: false, notas: "Shabat" },
+    "2026-06-07": { diaHebreo: "21 del 3°M", esRoshJodesh: false, notas: "" },
+    "2026-06-08": { diaHebreo: "22 del 3°M", esRoshJodesh: false, notas: "" },
+    "2026-06-09": { diaHebreo: "23 del 3°M", esRoshJodesh: false, notas: "" },
+    "2026-06-10": { diaHebreo: "24 del 3°M", esRoshJodesh: true, notas: "" },
+    "2026-06-11": { diaHebreo: "25 del 3°M", esRoshJodesh: false, notas: "" },
+    "2026-06-12": { diaHebreo: "26 del 3°M", esRoshJodesh: false, notas: "" },
+    "2026-06-13": { diaHebreo: "27 del 3°M", esRoshJodesh: false, notas: "Shabat" },
+    "2026-06-14": { diaHebreo: "28 del 3°M", esRoshJodesh: false, notas: "" },
     "2026-06-15": { diaHebreo: "29 del 3°M", esRoshJodesh: false, notas: "" },
     "2026-06-16": { diaHebreo: "1 del 4°M", esRoshJodesh: true, notas: "Inicio de mes" },
     "2026-06-17": { diaHebreo: "2 del 4°M", esRoshJodesh: false, notas: "" },
