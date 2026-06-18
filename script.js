@@ -91,10 +91,10 @@ function renderizarCalendario() {
     const primerDiaIndex = new Date(anio, mes, 1).getDay();
     const totalDiasMes = new Date(anio, mes + 1, 0).getDate();
 
-    // Celdas vacías desfasadas
+    // Celdas vacías desfasadas (Adaptadas para celular)
     for (let i = 0; i < primerDiaIndex; i++) {
         const celdaVacia = document.createElement('div');
-        celdaVacia.className = "p-4 bg-slate-800/20 border border-slate-700/40 rounded-xl min-h-[140px]";
+        celdaVacia.className = "p-1 md:p-4 bg-slate-800/20 border border-slate-700/40 rounded-xl min-h-[110px] md:min-h-[140px]";
         grid.appendChild(celdaVacia);
     }
 
@@ -110,26 +110,27 @@ function renderizarCalendario() {
         const idTarde = formatearFechaID(fechaTarde);
         const datosTarde = PROGRAMACION_DIARIA[idTarde] || { diaHebreo: "S/N", esRoshJodesh: false, notas: "" };
 
-        celda.className = "celda-dia p-3 border border-slate-700 rounded-xl min-h-[140px] flex flex-col justify-between text-left bg-hebreo-tarde shadow-inner cursor-pointer";
+        // min-h-[150px] en celular para que quepa todo el texto verticalmente sin amontonarse
+        celda.className = "celda-dia p-1.5 md:p-3 border border-slate-700 rounded-xl min-h-[150px] md:min-h-[140px] flex flex-col justify-between text-left bg-hebreo-tarde shadow-inner cursor-pointer";
 
-        // Estilos fijos oscuros para textos y carteles
-        let cartelRoshJodesh = datosTarde.esRoshJodesh ? `<span class="text-[9px] bg-purple-600 text-white px-1 py-0.5 rounded font-bold block text-center mt-1">👑 ROSH JÓDESH</span>` : '';
-        let cartelNotaTarde = datosTarde.notas ? `<span class="text-[9px] bg-red-600 text-white px-1 py-0.5 rounded font-bold block text-center mt-1">🎉 ${datosTarde.notas}</span>` : '';
-        let cartelNotaManana = datosManana.notas ? `<span class="text-[9px] bg-blue-950 text-blue-300 px-1 py-0.5 rounded font-medium block mt-1 border border-blue-900">${datosManana.notas}</span>` : '';
+        // Estilos de los carteles
+        let cartelRoshJodesh = datosTarde.esRoshJodesh ? `<span class="text-[8px] md:text-[9px] bg-purple-600 text-white px-1 py-0.5 rounded font-bold block text-center mt-1 break-words">👑 ROSH JÓDESH</span>` : '';
+        let cartelNotaTarde = datosTarde.notas ? `<span class="text-[8px] md:text-[9px] bg-red-600 text-white px-1 py-0.5 rounded font-bold block text-center mt-1 break-words">🎉 ${datosTarde.notas}</span>` : '';
+        let cartelNotaManana = datosManana.notas ? `<span class="text-[8px] md:text-[9px] bg-blue-950 text-blue-300 px-1 py-0.5 rounded font-medium block mt-1 border border-blue-900 break-words">${datosManana.notas}</span>` : '';
 
         celda.innerHTML = `
-            <div class="flex justify-between items-start">
-                <span class="text-2xl font-black text-slate-200 leading-none">${dia}</span>
-                <div class="text-right max-w-[65%]">
-                    <span class="text-[10px] text-slate-400 font-bold bg-slate-700 px-1.5 py-0.5 rounded block truncate">
+            <div class="flex flex-col sm:flex-row justify-between items-start gap-1 w-full">
+                <span class="text-xl md:text-2xl font-black text-slate-200 leading-none">${dia}</span>
+                <div class="text-left sm:text-right w-full sm:max-w-[70%]">
+                    <span class="text-[8px] md:text-[10px] text-slate-400 font-bold bg-slate-700 px-1 py-0.5 rounded block truncate">
                         ☀️ ${datosManana.diaHebreo}
                     </span>
                     ${cartelNotaManana}
                 </div>
             </div>
             
-            <div class="text-right mt-auto pt-4">
-                <span class="text-[10px] text-amber-200 font-black bg-amber-950/40 border border-amber-900/40 px-1.5 py-0.5 rounded-sm block text-center">
+            <div class="text-right mt-auto pt-2 w-full">
+                <span class="text-[8px] md:text-[10px] text-amber-200 font-black bg-amber-950/40 border border-amber-900/40 px-1 py-0.5 rounded-sm block text-center truncate">
                     🌅 ${datosTarde.diaHebreo}
                 </span>
                 ${cartelRoshJodesh}
