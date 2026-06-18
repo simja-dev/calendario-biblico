@@ -1,0 +1,14 @@
+/* Degradado Fijo para Modo Oscuro (Gris Pizarra y Ocre Marrón Oscuro) */
+.bg-hebreo-tarde {
+    background: linear-gradient(135deg, #184C59 50%, #182B59 50%);
+}
+
+/* Efecto de elevación e iluminación al pasar el mouse por un día */
+.celda-dia {
+    transition: all 0.2s ease-in-out;
+}
+
+.celda-dia:hover {
+    transform: translateY(-3px);
+    border-color: #251859; /* Slate 500 */
+}
