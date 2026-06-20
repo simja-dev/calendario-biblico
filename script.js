@@ -133,7 +133,8 @@ const PROGRAMACION_DIARIA = {
     "2026-10-07": { diaHebreo: "26 del 7°M", esRoshJodesh: false, notas: "" },
     "2026-10-08": { diaHebreo: "27 del 7°M", esRoshJodesh: false, notas: "" },
     "2026-10-09": { diaHebreo: "28 del 7°M", esRoshJodesh: false, notas: "" },
-    "2026-10-10": { diaHebreo: "29 del 7°M", esRoshJodesh: false, notas: "Shabat" },   
+    "2026-10-10": { diaHebreo: "29 del 7°M", esRoshJodesh: false, notas: "Shabat" },
+    "2026-10-11": { diaHebreo: "1 del 8°M", esRoshJodesh: false, notas: "" },  
 };
 
 
